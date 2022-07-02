@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player player;
-
     [SerializeField] private Slider slider;
+    
+    public void ChangeHealthBar()
+    {
+        slider.value=player.Health;
+    }
 
     private void Start()
     {
-        slider.maxValue=player._maxHealth;
-    }
-    
-    private void Update()
-    {
-        slider.value=player._health;
+        slider.maxValue=player.MaxHealth;
     }
 }

@@ -3,35 +3,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float _health { get; private set; }
-    public float _maxHealth { get; private set; }
+    [SerializeField] private HealthBar healthBar;
+    public float Health { get; private set; }
 
-    public void HealPlayer(float _heal)
+    public float MaxHealth { get; private set; }
+
+    public void ChangeHealPlayer(float number)
     {
-        if (_health < 100)
-        {
-        StartCoroutine(ChangeHealth(_heal));
-        }
-
-        if (_health > 100)
-            _health = 100;
+      StartCoroutine(ChangeHealth(number));
     }
 
-    public void DamagePlayer(float _damage)
-    {
-        if (_health > 0)
-           {
-           StartCoroutine(ChangeHealth(_damage));
-           }
-
-        if (_health < 0)
-            _health = 0;
-    }
-    
     private void Awake()
     {
-        _health = 80;
-        _maxHealth = 100;
+        Health = 80;
+        MaxHealth = 100;
+        healthBar.ChangeHealthBar();
     }
 
     private IEnumerator ChangeHealth(float number)
@@ -39,9 +25,11 @@ public class Player : MonoBehaviour
         var waitForSeconds = new WaitForSeconds(0.05f);
         int speedChange = 10;
 
-        for(int i=0; i< speedChange;i++)
+        for (int i = 0; i < speedChange; i++)
         {
-            _health=Mathf.MoveTowards(_health,_maxHealth,number/speedChange);
+            Health = Mathf.MoveTowards(Health, MaxHealth, number / speedChange);
+            Health = Mathf.Clamp(Health, 0,MaxHealth);
+            healthBar.ChangeHealthBar();
 
             yield return waitForSeconds;
         }
