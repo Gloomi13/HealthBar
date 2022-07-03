@@ -8,14 +8,12 @@ public class Player : MonoBehaviour
 
     public void HealPlayer(float heal)
     {
-      Health+=heal;
-      Health = Mathf.Clamp(Health, 0,MaxHealth);
+      Health = Mathf.Clamp(Health+heal, 0,MaxHealth);
     }
 
     public void DamagePlayer(float damage)
     {
-      Health-=damage;
-      Health = Mathf.Clamp(Health, 0,MaxHealth);
+      Health = Mathf.Clamp(Health-damage, 0,MaxHealth);
     }
 
     private void Awake()
