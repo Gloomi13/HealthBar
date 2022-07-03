@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Player _player;
+    [SerializeField] private Slider _slider;
     
     public void ChangeHealthBar(float number)
     {
@@ -15,19 +15,19 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        slider.maxValue=player.MaxHealth;
-        slider.value=player.Health;
+        _slider.maxValue=_player.MaxHealth;
+        _slider.value=_player.Health;
     }
 
-        private IEnumerator SmoothlyChangeHealthBar(float number)
+        public IEnumerator SmoothlyChangeHealthBar(float number)
     {
         var waitForSeconds = new WaitForSeconds(0.05f);
         int speedChange = 10;
 
         for (int i = 0; i < speedChange; i++)
         {
-            slider.value = Mathf.MoveTowards(slider.value, slider.maxValue, number /speedChange);
-            slider.value = Mathf.Clamp(slider.value, 0,slider.maxValue);
+            _slider.value = Mathf.MoveTowards(_slider.value, _slider.maxValue, number /speedChange);
+            _slider.value = Mathf.Clamp(_slider.value, 0,_slider.maxValue);
 
             yield return waitForSeconds;
         }
