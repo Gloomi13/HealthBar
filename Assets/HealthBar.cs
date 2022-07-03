@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
         _slider.value=_player.Health;
     }
 
-        public IEnumerator SmoothlyChangeHealthBar(float number)
+        private IEnumerator SmoothlyChangeHealthBar(float number)
     {
         var waitForSeconds = new WaitForSeconds(0.05f);
         int speedChange = 10;
