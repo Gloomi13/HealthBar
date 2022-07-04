@@ -491,7 +491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 218130667}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: DoDamagePlayer
+        m_MethodName: DamagePlayer
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -503,13 +503,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 138840815}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: ChangeHealthBar
-        m_Mode: 4
+        m_MethodName: Change
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: -10
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1275,7 +1275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 218130667}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: DoHealPlayer
+        m_MethodName: HealPlayer
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1287,13 +1287,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 138840815}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: ChangeHealthBar
-        m_Mode: 4
+        m_MethodName: Change
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1426,19 +1426,7 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2042141677
 GameObject:
   m_ObjectHideFlags: 0
